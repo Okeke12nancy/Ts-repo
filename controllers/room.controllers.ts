@@ -73,7 +73,6 @@ class RoomController {
     return res.status(200).send({
       success: true,
       message: "deleted room successfully",
-      data: room,
     });
   }
 }

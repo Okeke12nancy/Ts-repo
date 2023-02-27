@@ -1,0 +1,35 @@
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+exports.__esModule = true;
+exports.UnauthenticatedError = void 0;
+var http_status_codes_1 = require("http-status-codes");
+var custom_api_1 = __importDefault(require("./custom-api"));
+var UnauthenticatedError = (function (_super) {
+    __extends(UnauthenticatedError, _super);
+    function UnauthenticatedError(message) {
+        var _this = _super.call(this, message) || this;
+        _this.statusCode = http_status_codes_1.StatusCodes.BAD_REQUEST;
+        return _this;
+    }
+    return UnauthenticatedError;
+}(custom_api_1["default"]));
+exports.UnauthenticatedError = UnauthenticatedError;
+module.exports = UnauthenticatedError;
+//# sourceMappingURL=unauthenticated.js.map
